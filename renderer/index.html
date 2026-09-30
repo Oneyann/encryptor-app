@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Шифровальщик данных</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Шифровальщик данных</h1>
+    <p>AES-256 · PBKDF2 · 100 000 итераций</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="file">Файлы</button>
+    <button class="tab" data-tab="text">Текст</button>
+  </nav>
+
+  <section id="tab-file" class="panel active">
+    <label>Пароль</label>
+    <input id="file-password" type="password" placeholder="Введите пароль" />
+
+    <label>Исходный файл</label>
+    <div class="row">
+      <input id="file-input" type="text" placeholder="Путь к файлу" />
+      <button id="file-input-btn" class="btn-secondary">Выбрать</button>
+    </div>
+
+    <label>Куда сохранить</label>
+    <div class="row">
+      <input id="file-output" type="text" placeholder="Путь сохранения" />
+      <button id="file-output-btn" class="btn-secondary">Выбрать</button>
+    </div>
+
+    <div class="actions">
+      <button id="encrypt-file-btn" class="btn-primary">Зашифровать</button>
+      <button id="decrypt-file-btn" class="btn-primary">Расшифровать</button>
+    </div>
+  </section>
+
+  <section id="tab-text" class="panel">
+    <label>Пароль</label>
+    <input id="text-password" type="password" placeholder="Введите пароль" />
+
+    <label>Ввод</label>
+    <textarea id="text-input" placeholder="Открытый текст или Base64"></textarea>
+
+    <label>Результат</label>
+    <textarea id="text-output" readonly placeholder="Здесь появится результат"></textarea>
+
+    <div class="actions">
+      <button id="encrypt-text-btn" class="btn-primary">Зашифровать</button>
+      <button id="decrypt-text-btn" class="btn-primary">Расшифровать</button>
+    </div>
+  </section>
+
+  <div id="status" class="status"></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "encryptor-app",
+  "version": "1.0.0",
+  "description": "Шифровальщик данных AES-256",
+  "license": "MIT",
+  "author": "Oneyann",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.example.encryptor",
+    "productName": "Encryptor",
+    "win": { "target": "nsis" },
+    "linux": { "target": "AppImage" },
+    "mac": { "target": "dmg" }
+  }
+}
