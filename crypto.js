@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 const ITERATIONS = 100_000;
-const KEY_LEN = 32;   // AES-256
+const KEY_LEN = 32;  
 const SALT_LEN = 16;
 const IV_LEN = 16;
 const ALGO = 'aes-256-cbc';
